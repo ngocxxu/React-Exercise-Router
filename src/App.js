@@ -3,8 +3,11 @@ import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 import Header from "./components/Home/Header/Header";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
+import Detail from "./pages/Detail/Detail";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import Profile from "./pages/Profile/Profile";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +20,12 @@ function App() {
         <Route exact path="/contact" component={Contact}></Route>
         <Route exact path="/about" component={About}></Route>
         <Route exact path="/login" component={Login}></Route>
+        <Route exact path="/profile" component={Profile}></Route>
+        <Route exact path="/detail/:id" component={Detail}></Route>
+
+        {/* tránh người dùng gõ bậy bạ trên URL, khi URL ko hợp lý thì sẽ trả về trang PageNotFound */}
+        <Route path="*" component={PageNotFound}></Route>
+
         <Route exact path="/" component={Home}></Route>
       </Switch>
     </BrowserRouter>

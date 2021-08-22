@@ -19,12 +19,17 @@ export default function Login(props) {
       e.preventDefault();
       if(userLogin.userName === '123' && userLogin.passWord === '123'){
         //thành công thì chuyển về trang trc đó
-        // props.history.goBack();
+        props.history.goBack();
         //chuyển đến trang chỉ định sau khi xử lý
         //sau khi chuyển đến trang Home, nếu ta click vào mũi tên Back của Browser thì nó sẽ trả về trang LOGIN
-        props.history.push('/home');
+        // props.history.push('/home');
         //nếu ta click vào mũi tên Back của Browser thì nó sẽ KHÔNG trả về trang LOGIN mà trả về trang CŨ trc khi chuyển về trang LOGIN
         // props.history.replace('/home');
+
+        //lưu thông tin người đã login thành công vào localstorage để ng dùng ko phải login lại
+        //JSON.stringify(userLogin) : biến obj thành chuỗi string
+        localStorage.setItem('userLogin', JSON.stringify(userLogin))
+
       }else{
         alert('Login false')
       }

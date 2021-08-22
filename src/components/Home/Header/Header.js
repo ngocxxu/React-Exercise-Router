@@ -38,6 +38,11 @@ export default function Header(props) {
               LOGIN
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/profile" activeClassName="active-nav-item" activeStyle={{fontWeight: "bold"}}>
+              Profile
+            </NavLink>
+          </li>
           <li className="nav-item dropdown">
             <NavLink
               className="nav-link dropdown-toggle"
