@@ -1,17 +1,41 @@
 import React, {useState} from 'react'
+import { Prompt } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Login(props) {
 
   const [userLogin, setUserLogin] = useState(
-    {userName:'', passWord:''},
+    {userName:'', passWord:'', status: false,},
   )
 
     const handleChange = (e) =>{
       const {name,value} = e.target;
-      setUserLogin({
+
+      const newUserLogin = {
         ...userLogin,
         [name]: value,
-      })
+      };
+
+      let valid = true;
+
+      for(let key in newUserLogin){
+        //so sánh userName, passWord nếu rỗng, nhưng ko chứa trường status
+        if(key !== 'status'){
+          console.log('status');
+          if(newUserLogin[key].trim() === ''){
+            valid = false;
+
+          }
+  
+        }
+      }
+     
+      if(!valid){
+        newUserLogin.status = true;
+      }else{
+        newUserLogin.status = false;
+      }
+
+      setUserLogin(newUserLogin);
 
     }
 
@@ -51,6 +75,13 @@ export default function Login(props) {
         <button className='btn btn-success'>LOGIN</button>
         
       </div>
+
+      {/* Promt dùng để hiển thị hộp thoại ngăn cản sự kiện rời đi khi mà bạn chưa hoàn tất nội dung bạn viết */}
+      {/* When = true thì hộp thoại Promt sẽ hiện lên */}
+      <Prompt when={userLogin.status} message={(location) => {
+        console.log(location)
+        return 'Bạn có muốn rời đi không'
+      }}></Prompt>
     </form>
   )
 }
