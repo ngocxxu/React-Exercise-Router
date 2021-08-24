@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Profile from "./pages/Profile/Profile";
 import ToDoList from "./pages/ToDoList/ToDoList";
+import ToDoListRedux from "./pages/ToDoList/ToDoListRedux";
 import ToDoListRFC from "./pages/ToDoList/ToDoListRFC";
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/profile" component={Profile}></Route>
         <Route exact path="/todolistrcc" component={ToDoList}></Route>
         <Route exact path="/todolistrfc" component={ToDoListRFC}></Route>
+        <Route exact path="/todolistredux" component={ToDoListRedux}></Route>
         <Route exact path="/detail/:id" component={Detail}></Route>
 
         {/* tránh người dùng gõ bậy bạ trên URL, khi URL ko hợp lý thì sẽ trả về trang PageNotFound */}
