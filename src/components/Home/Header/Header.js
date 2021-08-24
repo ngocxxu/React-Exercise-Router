@@ -43,6 +43,16 @@ export default function Header(props) {
               Profile
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/todolistrcc" activeClassName="active-nav-item" activeStyle={{fontWeight: "bold"}}>
+              ToDoList RCC
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/todolistrfc" activeClassName="active-nav-item" activeStyle={{fontWeight: "bold"}}>
+            ToDoList RFC
+            </NavLink>
+          </li>
           <li className="nav-item dropdown">
             <NavLink
               className="nav-link dropdown-toggle"

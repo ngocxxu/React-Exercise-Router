@@ -8,6 +8,8 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Profile from "./pages/Profile/Profile";
+import ToDoList from "./pages/ToDoList/ToDoList";
+import ToDoListRFC from "./pages/ToDoList/ToDoListRFC";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +23,8 @@ function App() {
         <Route exact path="/about" component={About}></Route>
         <Route exact path="/login" component={Login}></Route>
         <Route exact path="/profile" component={Profile}></Route>
+        <Route exact path="/todolistrcc" component={ToDoList}></Route>
+        <Route exact path="/todolistrfc" component={ToDoListRFC}></Route>
         <Route exact path="/detail/:id" component={Detail}></Route>
 
         {/* tránh người dùng gõ bậy bạ trên URL, khi URL ko hợp lý thì sẽ trả về trang PageNotFound */}
