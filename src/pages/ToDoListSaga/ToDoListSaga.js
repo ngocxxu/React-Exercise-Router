@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./Todolist.css";
 import Axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import { ADD_TASK_API, DELETE_TASK_API, DONE_TASK_API, GET_TASKLIST_API, REJECT_TASK_API } from "../../redux/constants/ToDoListConst";
 
 
 
@@ -49,20 +50,34 @@ export default function ToDoListSaga(props) {
   };
 
   const addTask = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: ADD_TASK_API,
+      taskName: state.values.taskName
 
+    })
 
   };
 
   const delTask = (taskName) => {
-
+    dispatch({
+      type: DELETE_TASK_API,
+      taskName: taskName
+    })
   }
 
   const doneTask = (taskName) => {
-
+    dispatch({
+      type: DONE_TASK_API,
+      taskName: taskName,
+    })
   }
 
   const rejectTask = (taskName) => {
-
+    dispatch({
+      type: REJECT_TASK_API,
+      taskName: taskName,
+    })
   }
 
 
@@ -116,13 +131,17 @@ export default function ToDoListSaga(props) {
   };
 
   const getTaskList = () => {
-
+    //dispatch action saga
+    dispatch({
+      type: GET_TASKLIST_API,
+    })
   };
 
 
 
   useEffect(() => {
 
+    getTaskList();
     return() => {
 
     }

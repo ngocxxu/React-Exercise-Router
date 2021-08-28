@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
+import LoadingComponent from "./components/GlobalSetting/LoadingComponent/LoadingComponent";
 import Header from "./components/Home/Header/Header";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
@@ -17,6 +18,9 @@ function App() {
     <BrowserRouter>
       {/* những component để bên ngoài <Switch></Switch> thì nó sẽ hiển thị ở all các trang có chứa trong Switch */}
       <Header></Header>
+
+      {/* chèn trang loading cho website */}
+      <LoadingComponent></LoadingComponent>
 
       {/* Switch dùng để khi page dc tìm thấy nó sẽ Break, giống cơ chế Switch Case */}
       <Switch>
