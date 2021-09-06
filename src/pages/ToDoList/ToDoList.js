@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import style from "./Todolist.css";
+import bgImg from './bg.png'
 export default class ToDoList extends Component {
   state = {
     taskList: [],
@@ -196,7 +197,7 @@ export default class ToDoList extends Component {
         <div className="card">
           <div className="card__header">
             {/* nếu tấm hình ko để trong folder public thì ta ghi là {require()} */}
-            <img src={require("./bg.png")} />
+            <img src={bgImg} />
           </div>
           {/* <h2>hello!</h2> */}
           <div className="card__body">

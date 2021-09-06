@@ -3,6 +3,7 @@ import style from "./Todolist.css";
 import Axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TASK_API, DELETE_TASK_API, DONE_TASK_API, GET_TASKLIST_API, REJECT_TASK_API } from "../../redux/constants/ToDoListConst";
+import bgImg from './bg.png'
 
 
 
@@ -159,7 +160,7 @@ export default function ToDoListSaga(props) {
           })
         }}>Dispatch action saga getTaskApi</button>
         <div className="card__header">
-          <img src={require("./bg.png")} />
+          <img src={bgImg} />
         </div>
         {/* <h2>hello!</h2> */}
         <form className="card__body" onSubmit={addTask}>

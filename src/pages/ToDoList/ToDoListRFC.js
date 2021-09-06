@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./Todolist.css";
 import Axios from "axios";
+import bgImg from './bg.png'
 
 export default function ToDoListRFC(props) {
   let [state, setState] = useState({
@@ -201,7 +202,7 @@ export default function ToDoListRFC(props) {
     <div>
       <div className="card">
         <div className="card__header">
-          <img src={require("./bg.png")} />
+        <img src={bgImg} />
         </div>
         {/* <h2>hello!</h2> */}
         <form className="card__body" onSubmit={addTask}>

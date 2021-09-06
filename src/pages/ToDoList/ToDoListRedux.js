@@ -4,6 +4,7 @@ import Axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { GET_TASK_API } from "../../redux/constants/ToDoListConst";
 import { addTaskApi, delTaskApi, doneTaskApi, getTaskListApi, rejectTaskApi } from "../../redux/actions/ToDoListAction";
+import bgImg from './bg.png'
 
 export default function ToDoListRedux(props) {
   //state chính là rootReducer
@@ -149,7 +150,7 @@ export default function ToDoListRedux(props) {
     <div>
       <div className="card">
         <div className="card__header">
-          <img src={require("./bg.png")} />
+        <img src={bgImg} />
         </div>
         {/* <h2>hello!</h2> */}
         <form className="card__body" onSubmit={addTask}>
